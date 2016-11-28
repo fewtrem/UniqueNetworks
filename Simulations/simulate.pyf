@@ -1,0 +1,22 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module simulate ! in 
+    interface  ! in :simulate
+        subroutine simulate(w,vr,i_c,vt,tau_md,n,v,vi,dt,en) ! in :simulate:simulate.f
+            real dimension(n,n) :: w
+            real dimension(n) :: vr
+            real dimension(n) :: i_c
+            real dimension(n) :: vt
+            real dimension(n) :: tau_md
+            integer intent(hide),depend(vr) :: n=len(vr)
+            real intent(out),dimension(n) :: v
+            real dimension(n) :: vi
+            real :: dt
+	    	real :: en
+        end subroutine simulate
+    end interface 
+end python module simulate
+
+! This file was auto-generated with f2py (version:2).
+! See http://cens.ioc.ee/projects/f2py2e/
